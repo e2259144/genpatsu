@@ -75,13 +75,13 @@ document.querySelector("#btn3").addEventListener("click", (e)=>{
 }
 
 function addStorage(key, display, plus=1){
-const buff = localStorage.getItem( key ); // キーの値を取得
+const buff = cgi.getItem( key ); // キーの値を取得
 if( buff === null ){ // (初期設定)
-localStorage.setItem(key, 0);
+cgi.setItem(key, 0);
 display.value = 0; // テキストボックスに表示
 } else {
 let value = Number(buff) + plus;
-localStorage.setItem(key, value); // 値を保存する
+cgi.setItem(key, value); // 値を保存する
 display.value = value; // テキストボックスに表示
 }
 }
