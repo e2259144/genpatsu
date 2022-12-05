@@ -48,25 +48,25 @@
 <p>「投票」ボタンを押すと、値を(+1)します。</p>
 りんご
 <button id="btn1">投票</button>
-<input type="text" id="cgi1" size=2><br>
+<input type="text" id="local1" size=2><br>
 みかん
 <button id="btn2">投票</button>
-<input type="text" id="cgi2" size=2><br>
+<input type="text" id="local2" size=2><br>
 ぶどう
 <button id="btn3">投票</button>
-<input type="text" id="cgi3" size=2>
-  
-  <script>
+<input type="text" id="local3" size=2>
+
+<script>
 window.onload = () => {
-const cgi1 = document.querySelector("#cgi1");
-const cgi2 = document.querySelector("#cgi2");
-const cgi3 = document.querySelector("#cgi3");
-const key1 = "touhyou1"; addStorage(key1, cgi1, 0);
-const key2 = "touhyou2"; addStorage(key2, cgi2, 0);
-const key3 = "touhyou3"; addStorage(key3, cgi3, 0);
+const Local1 = document.querySelector("#local1");
+const Local2 = document.querySelector("#local2");
+const Local3 = document.querySelector("#local3");
+const key1 = "touhyou1"; addStorage(key1, Local1, 0);
+const key2 = "touhyou2"; addStorage(key2, Local2, 0);
+const key3 = "touhyou3"; addStorage(key3, Local3, 0);
 /* ボタン1をクリック */
 document.querySelector("#btn1").addEventListener("click", (e)=>{
-addStorage(key1, cgi1);
+addStorage(key1, Local1);
 })
 document.querySelector("#btn2").addEventListener("click", (e)=>{
 })
@@ -75,13 +75,13 @@ document.querySelector("#btn3").addEventListener("click", (e)=>{
 }
 
 function addStorage(key, display, plus=1){
-const buff = cgi.getItem( key ); // キーの値を取得
+const buff = localStorage.getItem( key ); // キーの値を取得
 if( buff === null ){ // (初期設定)
-cgi.setItem(key, 0);
+localStorage.setItem(key, 0);
 display.value = 0; // テキストボックスに表示
 } else {
 let value = Number(buff) + plus;
-cgi.setItem(key, value); // 値を保存する
+localStorage.setItem(key, value); // 値を保存する
 display.value = value; // テキストボックスに表示
 }
 }
