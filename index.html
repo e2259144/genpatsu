@@ -92,5 +92,17 @@ display.value = value; // テキストボックスに表示
 }
 }
   
- <p1> https://docs.google.com/forms/d/e/1FAIpQLSdEZ2txusUg1B6OvXLBWTYcoFbxmDZerhaQyuV_IYTnp4WWbA/viewform?usp=sf_link<p1/>
+ <form action="/vote" method="post">
+  <label for="vote-option-1">Option 1</label>
+  <input type="radio" name="vote" id="vote-option-1" value="option-1">
+
+  <label for="vote-option-2">Option 2</label>
+  <input type="radio" name="vote" id="vote-option-2" value="option-2">
+
+  <label for="vote-option-3">Option 3</label>
+  <input type="radio" name="vote" id="vote-option-3" value="option-3">
+
+  <input type="submit" value="Vote">
+</form>
+
 
