@@ -59,5 +59,34 @@
   <p>原発に反対: <input type="radio" name="vote" value="2"> </p>
 </form>
 
+  
+  <!DOCTYPE html>
+<html>
+<body>
+
+<!-- ボタンを作る -->
+<input type="button" value="+1" id="button">
+
+<!-- 数値を表示する -->
+<p id="output">0</p>
+
+<script>
+  // ボタンを取得する
+  const button = document.getElementById("button");
+
+  // ボタンが押された時の処理
+  button.addEventListener("click", () => {
+    // 数値を取得する
+    const output = document.getElementById("output");
+    const currentValue = parseInt(output.textContent, 10);
+
+    // 数値を１ずつ増やす
+    output.textContent = currentValue + 1;
+  });
+</script>
+
+</body>
+</html>
+
 
 
