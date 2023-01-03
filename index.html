@@ -88,5 +88,44 @@
 </body>
 </html>
 
+<!DOCTYPE html>
+<html>
+<body>
+
+<!-- ボタンを作る -->
+<input type="button" value="+1" id="button">
+
+<!-- 数値を表示する -->
+<p id="output">0</p>
+
+<script>
+  // ボタンを取得する
+  const button = document.getElementById("button");
+
+  // ボタンが押された時の処理
+  button.addEventListener("click", () => {
+    // 数値を取得する
+    const output = document.getElementById("output");
+    let currentValue = parseInt(output.textContent, 10);
+
+    // localStorageから保存した値を取得する
+    const storedValue = localStorage.getItem("count");
+    if (storedValue) {
+      currentValue = parseInt(storedValue, 10);
+    }
+
+    // 数値を１ずつ増やす
+    currentValue += 1;
+
+    // 数値を表示する
+    output.textContent = currentValue;
+
+    // 数値をlocalStorageに保存する
+    localStorage.setItem("count", currentValue);
+  });
+</script>
+
+</body>
+</html>
 
 
