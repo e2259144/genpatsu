@@ -54,39 +54,8 @@
      <p1>・原子力発電へのテロの危険性があること</big></big></p>
 
 
-<body>
+<a href="https://docs.google.com/spreadsheets/d/1GFBw6VBcEpiNIq8LT5pvftbkd1mB8sAr6NA1e-IVhs8/edit?resourcekey#gid=1212834778">Example</a>
 
-<!-- ボタンを作る -->
-<input type="button" value="+1" id="button">
-
-<!-- 数値を表示する -->
-<p id="output">0</p>
-
-<!DOCTYPE script>
-  // ボタンを取得する
-  const button = document.getElementById("button");
-
-  // ボタンが押された時の処理
-  button.addEventListener("click", () => {
-    // 数値を取得する
-    const output = document.getElementById("output");
-    let currentValue = parseInt(output.textContent, 10);
-
-    // 数値を１ずつ増やす
-    currentValue += 1;
-    output.textContent = currentValue;
-
-    // 数値をlocalStorageに保存する
-    localStorage.setItem("savedValue", currentValue);
-  });
-
-  // 保存した値を取得して、表示する
-  const output = document.getElementById("output");
-  output.textContent = localStorage.getItem("savedValue");
-</script>
-
-</body>
-</html>
 
 
 
