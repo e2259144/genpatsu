@@ -60,78 +60,14 @@
 </form>
 
   
- 
-<!DOCTYPE html>
-<html>
-<body>
-
-<!-- ボタンを作る -->
-<input type="button" value="+1" id="button">
-
-<!-- 数値を表示する -->
-<p id="output">0</p>
-
-<script>
-  // ボタンを取得する
-  const button = document.getElementById("button");
-
-  // ボタンが押された時の処理
-  button.addEventListener("click", () => {
-    // 数値を取得する
-    const output = document.getElementById("output");
-    let currentValue = parseInt(output.textContent, 10);
-
-    // localStorageから保存した値を取得する
-    const storedValue = localStorage.getItem("count");
-    if (storedValue) {
-      currentValue = parseInt(storedValue, 10);
-    }
-
-    // 数値を１ずつ増やす
-    currentValue += 1;
-
-    // 数値を表示する
-    output.textContent = currentValue;
-
-    // 数値をlocalStorageに保存する
-    localStorage.setItem("count", currentValue);
-  });
-</script>
-
-</body>
-</html>
-
-  <!DOCTYPE html>
-<html>
-<body>
-
-<!-- 入力フォーム -->
-<input type="text" id="input">
-<input type="button" value="保存" id="save">
-
-<!-- 保存した値を表示する -->
-<p id="output"></p>
-
-<script>
-  // 保存ボタンを取得する
-  const saveButton = document.getElementById("save");
-
-  // 保存ボタンが押された時の処理
-  saveButton.addEventListener("click", () => {
-    // 入力された値を取得する
-    const input = document.getElementById("input");
-    const value = input.value;
-
-    // 入力された値をlocalStorageに保存する
-    localStorage.setItem("savedValue", value);
-  });
-
-  // 保存した値を取得して、表示する
-  const output = document.getElementById("output");
-  output.textContent = localStorage.getItem("savedValue");
-</script>
-
-</body>
-</html>
+<form>
+  名前: <input type="text" name="name"><br>
+  投票:
+  <input type="radio" name="vote" value="option1">オプション1
+  <input type="radio" name="vote" value="option2">オプション2
+  <input type="radio" name="vote" value="option3">オプション3
+  <br>
+  <input type="submit" value="投票する">
+</form>
 
 
