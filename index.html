@@ -54,20 +54,28 @@
      <p1>・原子力発電へのテロの危険性があること</big></big></p>
     
        
-  <form action="">
-  <p>原発に賛成: <input type="radio" name="vote" value="1"> </p>
-  <p>原発に反対: <input type="radio" name="vote" value="2"> </p>
-</form>
-
+<!-- HTML -->
+<button id="count-up">カウントアップ</button>
+<div id="count">0</div>
   
-<form>
-  名前: <input type="text" name="name"><br>
-  投票:
-  <input type="radio" name="vote" value="option1">オプション1
-  <input type="radio" name="vote" value="option2">オプション2
-  <input type="radio" name="vote" value="option3">オプション3
-  <br>
-  <input type="submit" value="投票する">
-</form>
+// JavaScript
+const countUpButton = document.getElementById("count-up");
+const countElement = document.getElementById("count");
+
+let count = 0;
+
+// ページが読み込まれたときに、保存されたカウントを取得して表示する
+window.addEventListener("load", () => {
+  count = localStorage.getItem("count") || 0;
+  countElement.textContent = count;
+});
+
+// カウントアップボタンがクリックされたときに、カウントをアップデートして保存する
+countUpButton.addEventListener("click", () => {
+  count++;
+  countElement.textContent = count;
+  localStorage.setItem("count", count);
+});
+
 
 
